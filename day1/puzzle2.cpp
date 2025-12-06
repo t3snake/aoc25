@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
 
 int process_rotation(int* current_value, int rotate_pivot, bool is_left_rotate) {
@@ -18,6 +19,11 @@ int process_rotation(int* current_value, int rotate_pivot, bool is_left_rotate) 
 }
 
 int main() {
+	clock_t start, end;
+	double cpu_time_used;
+
+	start = clock();
+
 	int current_value = 50;
 
 	FILE* fptr;
@@ -88,6 +94,15 @@ int main() {
 	}
 
 	printf("Total times it passes 0 is %d", sum);
+
+	end = clock();
+	cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+	printf("Time taken to run this code: %f seconds.\n", cpu_time_used);
+	
+	fptr = fopen("runtime_info.txt", "w");
+	fprintf(fptr, "Time taken to run this code: %.16f seconds.\n", cpu_time_used);
+	fclose(fptr);
+
 	return 0;
 }
 
