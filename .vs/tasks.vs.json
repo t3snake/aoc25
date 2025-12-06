@@ -1,0 +1,13 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "Build CPP File",
+      "appliesTo": "*.cpp",
+      "type": "launch",
+      "command": "cl",
+      "args": [ "-Zi", "${fileBasename}.cpp" ],
+      "workingDirectory": "${fileDirname}"
+    }
+  ]
+}

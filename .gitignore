@@ -1,0 +1,9 @@
+*.exe
+*.ilk
+*.obj
+*.pdb
+*_input.txt
+
+.vs/*
+!.vs/tasks.vs.json
+
